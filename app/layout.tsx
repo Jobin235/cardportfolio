@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
-        <main className="container mx-auto p-4 min-h-screen">{children}</main>
+        <main className="container mx-auto px-3 py-5 min-h-screen">{children}</main>
       </body>
     </html>
   );

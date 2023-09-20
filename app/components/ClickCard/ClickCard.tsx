@@ -7,7 +7,8 @@ type ClickCard = {
   title: string;
   clickTitle: string;
   clickType: "download" | "redirect";
-  path: string
+  path: string;
+  fullHeight?: boolean;
 };
 
 export default function ClickCard({
@@ -15,10 +16,11 @@ export default function ClickCard({
   clickTitle,
   clickType,
   path,
+  fullHeight,
   children,
 }: ClickCard) {
   return (
-    <Card bgColor="black">
+    <Card bgColor="black" fullHeight={fullHeight}>
       <div className="flex justify-between">
         <h2 className="text-2xl font-bold">{title}</h2>
         {clickType === "download" ? (

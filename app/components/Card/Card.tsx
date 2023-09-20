@@ -2,11 +2,17 @@ import classNames from "classnames";
 
 type CardProps = {
   children: React.ReactNode;
-  bgColor: "red" | "green" | "yellow" | "black";
-  padding?: string 
-}
+  bgColor?: "red" | "green" | "yellow" | "black";
+  padding?: string;
+  fullHeight?: boolean;
+};
 
-export default function Card({ children, bgColor, padding }: CardProps) {
+export default function Card({
+  children,
+  bgColor = "black",
+  padding,
+  fullHeight = false,
+}: CardProps) {
   const colorVariants = {
     black: "bg-cool-black",
     red: "bg-cool-red",
@@ -16,10 +22,11 @@ export default function Card({ children, bgColor, padding }: CardProps) {
   return (
     <section
       className={classNames(
-        "rounded-2xl mb-4 mx-1",
-        {"p-8": padding === undefined},
-        `${padding}`,
-        `${colorVariants[bgColor]}`
+        "mx-1 rounded-2xl",
+        { "p-8": padding === undefined },
+        { "h-full": fullHeight === true },
+        `${padding ? padding : ""}`,
+        `${colorVariants[bgColor]}`,
       )}
     >
       {children}

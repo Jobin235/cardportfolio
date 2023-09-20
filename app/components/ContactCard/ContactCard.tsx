@@ -24,7 +24,7 @@ export default function ContactCard({ data }: ContactCardProps) {
               <React.Fragment key={contact.type}>
                 {contact.link ? (
                   <Link href={contact.link ? contact.link : ""}>
-                    <div className="w-14 h-14">
+                    <div className="h-14 w-14">
                       <Image
                         width="100"
                         height="100"
@@ -37,8 +37,8 @@ export default function ContactCard({ data }: ContactCardProps) {
                     </div>
                   </Link>
                 ) : (
-                  <div className="flex flex-col relative">
-                    <div className="peer w-14 h-14 relative">
+                  <div className="relative flex flex-col">
+                    <div className="peer relative h-14 w-14">
                       <Image
                         width="100"
                         height="100"
@@ -47,7 +47,7 @@ export default function ContactCard({ data }: ContactCardProps) {
                         alt={contact.alt}
                       />
                     </div>
-                    <p className="z-10 right-0 top-1/4 font-bold absolute bg-cool-red py-1 px-3 whitespace-nowrap rounded-full pointer-events-none hidden peer-hover:block">
+                    <p className="pointer-events-none absolute right-0 top-1/4 z-10 hidden whitespace-nowrap rounded-full bg-cool-red px-3 py-1 font-bold peer-hover:block">
                       {contact.detail}
                     </p>
                   </div>
